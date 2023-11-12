@@ -32,4 +32,11 @@ class TodoService {
     box.putAt(index, todoItem);
   }
 
+
+   Future<void> toggleCompleted(int index, TodoItem item) async {
+    var box = await _box;
+    item.isCompleted = !item.isCompleted;
+    await box.putAt(index, item);
+  }
+
 }
